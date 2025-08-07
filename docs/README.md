@@ -328,4 +328,4 @@ Built with ❤️ by the SSTI Scanner team and contributors. Special thanks to t
 | **Troubleshooting** | [Troubleshooting Guide](TROUBLESHOOTING.md) |
 | **Contributing** | [Contributing Guide](CONTRIBUTING.md) |
 
-For the most up-to-date information, visit the [GitHub repository](https://github.com/your-username/ssti-scanner).
+For the most up-to-date information, visit the [GitHub repository](https://github.com/samir-djili/ssti-scanner).

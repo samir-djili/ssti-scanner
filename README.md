@@ -248,7 +248,7 @@ This tool is intended for authorized security testing only. Users are responsibl
 
 - 🐛 [Report Issues](https://github.com/samir-djili/ssti-scanner/issues)
 - 💬 [Discussions](https://github.com/samir-djili/ssti-scanner/discussions)
-- 📧 Email: [your-email@domain.com]
+- 📧 Email: [ns_djili@esi.dz]
 
 ---
 

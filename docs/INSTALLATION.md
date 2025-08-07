@@ -576,9 +576,9 @@ docker run --memory=512m sstiscanner/ssti-scanner scan --url http://example.com
 ### Getting Help
 
 1. **Check Documentation**: [docs/](docs/)
-2. **Search Issues**: [GitHub Issues](https://github.com/your-username/ssti-scanner/issues)
-3. **Ask Questions**: [Discussions](https://github.com/your-username/ssti-scanner/discussions)
-4. **Report Bugs**: [New Issue](https://github.com/your-username/ssti-scanner/issues/new)
+2. **Search Issues**: [GitHub Issues](https://github.com/samir-djili/ssti-scanner/issues)
+3. **Ask Questions**: [Discussions](https://github.com/samir-djili/ssti-scanner/discussions)
+4. **Report Bugs**: [New Issue](https://github.com/samir-djili/ssti-scanner/issues/new)
 
 ### Debug Mode
 
