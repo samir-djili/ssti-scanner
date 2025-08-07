@@ -1,0 +1,23 @@
+{
+    "name": "smarty/ssti-test-app",
+    "description": "Vulnerable Smarty application for SSTI testing",
+    "type": "project",
+    "require": {
+        "php": "^7.4|^8.0",
+        "smarty/smarty": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartySSTI\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  # Python Applications
+  jinja2-flask:
+    build:
+      context: ./python/jinja2_flask
+      dockerfile: Dockerfile
+    container_name: ssti-jinja2-flask
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    networks:
+      - ssti-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  django-templates:
+    build:
+      context: ./python/django_templates
+      dockerfile: Dockerfile
+    container_name: ssti-django-templates
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings
+      - PYTHONPATH=/app
+    networks:
+      - ssti-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # PHP Applications
+  twig-symfony:
+    build:
+      context: ./php/twig_symfony
+      dockerfile: Dockerfile
+    container_name: ssti-twig-symfony
+    ports:
+      - "8001:80"
+    networks:
+      - ssti-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  smarty:
+    build:
+      context: ./php/smarty
+      dockerfile: Dockerfile
+    container_name: ssti-smarty
+    ports:
+      - "8002:80"
+    networks:
+      - ssti-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # Java Applications
+  freemarker-spring:
+    build:
+      context: ./java/freemarker_spring
+      dockerfile: Dockerfile
+    container_name: ssti-freemarker-spring
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=test
+    networks:
+      - ssti-test-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+  ssti-test-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  test-data:
+    driver: local

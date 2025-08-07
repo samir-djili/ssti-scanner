@@ -1,0 +1,103 @@
+# SSTI Scanner Configuration
+
+# Default configuration for the SSTI Scanner
+scanning:
+  # Number of concurrent threads for scanning
+  threads: 10
+  
+  # Delay between requests (seconds)
+  delay: 0.5
+  
+  # Request timeout (seconds)
+  timeout: 30
+  
+  # Scan intensity (quick, normal, aggressive)
+  intensity: normal
+  
+  # Follow redirects during scanning
+  follow_redirects: true
+  
+  # Maximum number of redirects to follow
+  max_redirects: 5
+
+crawling:
+  # Maximum crawling depth
+  max_depth: 3
+  
+  # Maximum pages to crawl
+  max_pages: 1000
+  
+  # Crawling timeout (seconds)
+  timeout: 30
+  
+  # User agent for crawling
+  user_agent: "SSTI-Scanner/1.0"
+  
+  # Respect robots.txt
+  respect_robots: true
+  
+  # Enable JavaScript execution for SPA crawling
+  enable_javascript: false
+
+detection:
+  # Template engines to target (empty = all)
+  engines: []
+  
+  # Include blind injection testing
+  blind_injection: true
+  
+  # Maximum payload length
+  max_payload_length: 1000
+  
+  # Confidence threshold for reporting
+  min_confidence: low
+
+authentication:
+  # Authentication type (none, basic, bearer, session, custom)
+  type: none
+  
+  # Basic auth credentials
+  username: ""
+  password: ""
+  
+  # Bearer token
+  token: ""
+  
+  # Session cookies
+  cookies: {}
+  
+  # Custom headers
+  headers: {}
+
+proxy:
+  # HTTP proxy
+  http_proxy: ""
+  
+  # HTTPS proxy  
+  https_proxy: ""
+  
+  # Proxy authentication
+  proxy_auth: ""
+
+output:
+  # Output format (console, json, html, csv, xml)
+  format: console
+  
+  # Output file path
+  file: ""
+  
+  # Enable colored output
+  colors: true
+  
+  # Verbosity level (quiet, normal, verbose, debug)
+  verbosity: normal
+  
+  # Debug mode
+  debug: false
+
+# User agents for rotation
+user_agents:
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0"

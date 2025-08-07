@@ -1,0 +1,12 @@
+"""
+Requirements for Django Templates SSTI test application.
+"""
+
+# Core Django dependencies
+Django==4.2.5
+pytz==2023.3
+
+# Additional testing utilities
+requests==2.31.0
+pytest==7.4.2
+pytest-django==4.5.2
